@@ -1,6 +1,6 @@
 # Hackathon: Popcorn
 
-This project is created for the ![Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
+This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
 
 ## Description 
 Popcorn is a social media app for movies and tv shows using the MERNG Stack - MongoDb, Express.js, React.js, Node.js, GraphQL.
@@ -51,7 +51,3 @@ It should load on: http://localhost:8080/
 
 ### Challenges  
 - 
-
-# Future Features
-- 
-
