@@ -14,12 +14,12 @@ To start up the dev server:
 
 It should load on: http://localhost:5000/
 
-To start up our client:   
+To start up the client:   
 `cd react-client`   
 `npm install`     
-`npm run dev`   
+`npm start`   
 
-It should load on: http://localhost:8080/
+It should load on: http://localhost:3000/
 
 # Technologies
 - HTML, CSS, JavaScript, mongoDB
@@ -37,6 +37,7 @@ It should load on: http://localhost:8080/
 # Process 
 1. Plan! Come up with an idea on paper, create a wireframe with MoqUps.
 2. Set up server, database, and install necessary dependencies.
+3. Create react front end using `create-react-app` 
 
 ## Changelog
 
