@@ -1,8 +1,9 @@
 const User = require('../../models/User');
+const { UserInputError } = require('apollo-server')
 
 module.exports = {
     Mutation: {
-        async register(_, { registerInput: { username }}, context, info) {
+        async register(_, { registerInput: { username }}) {
             // Make sure user doesn't already exist
             const user = await User.findOne({ username });
             if (user) {
