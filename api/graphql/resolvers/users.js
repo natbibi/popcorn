@@ -2,7 +2,7 @@ const User = require('../../models/User');
 
 module.exports = {
     Mutation: {
-        async register(_, { registerInput: { username }}) {
+        async register(_, { registerInput: { username }}, context, info) {
             // Make sure user doesn't already exist
             const user = await User.findOne({ username });
             if (user) {
@@ -27,3 +27,13 @@ module.exports = {
         }
     }
 };
+
+// mutation{
+//     register(registerInput:{
+//       username:""
+//     }){
+//       id
+//       username
+//       createdAt
+//     }
+//   }
