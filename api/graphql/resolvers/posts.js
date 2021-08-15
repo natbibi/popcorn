@@ -24,5 +24,30 @@ module.exports = {
             }
         }
     },
-    
+    Mutation: {
+        async createPost(_, { body }) {
+            const newPost = new Post({
+                body,
+                user: user.id,
+                username: user.username,
+                createdAt: new Date().toISOString()
+            });
+            const post = await newPost.save();
+            return post;
+        },
+        async deletePost(_, { postId }){
+
+            try {
+                const post = await Post.findById(postId);
+                if (user.username === post.username) {
+                    await post.delete()
+                    return "Post deleted successfully!";
+                } else {
+                    throw new Error("Not allowed!")
+                }
+            } catch(err) {
+                throw new Error(err);
+            }
+        }
+    }
 };
