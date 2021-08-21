@@ -31,7 +31,7 @@ module.exports = {
             const user = await User.findById(userId)
 
             if (body.trim() === '') {
-                throw new UserInputError('Empty Comment')
+                throw new UserInputError('Empty Post')
             }
 
             if (user) {
