@@ -30,6 +30,10 @@ module.exports = {
         async createPost(_, { userId, body }) {
             const user = await User.findById(userId)
 
+            if (body.trim() === '') {
+                throw new UserInputError('Empty Comment')
+            }
+
             if (user) {
                 const newPost = new Post({
                     body,
