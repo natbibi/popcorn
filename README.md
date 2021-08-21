@@ -38,6 +38,8 @@ It should load on: http://localhost:3000/
 1. Plan! Come up with an idea on paper, create a wireframe with MoqUps 
 2. Set up server, database, and install necessary dependencies 
 3. Create react front-end using `create-react-app` 
+4. Create models for Posts and Users and resolvers for graphQL 
+
 
 ## Changelog
 
@@ -49,15 +51,19 @@ It should load on: http://localhost:3000/
 1. Set up apollo-server w/ express.js and config for graphQL 
 2. Create cluster and database on MongoDB and connect to server 
 3. Design initial schema for Post and User 
+4. Add CRUD functions for creating a new user and creating / deleting posts 
+5. Add create and delete for comments on Posts and likes on Posts
 
 
 ## Bugs
-- [ ] no bugs here!
+- [ ] `new Date().toISOString()` shows the wrong UK time zone - 1 hour behind 
+- [x] createPost and deletePost not working - Solved: add userID parameter
  
 # Wins & Challenges
 
 ### Wins
 - MongoDB account set up and connection went well!
+- Finding a small typo after a long time 😭 
 
 ### Challenges  
-- 
+- Understanding and implementing GraphQL because it's new to me!
