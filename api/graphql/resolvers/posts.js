@@ -59,7 +59,28 @@ module.exports = {
             throw new Error(err);
         }
     },
-    
+    async likePost(_, { postId }) {
+        const post = await Post.findById(postId)
+
+        if (post) {
+            const username = post.username
+            if (post.likes.find((like) => like.username === username)) {
+                console.log('olaaa')
+                post.likes = post.likes.filter((like) => like.username !== username);
+                console.log('hi')
+            } else {
+                post.likes.push({
+                    username,
+                    createdAt: new Date().toISOString()
+                })
+                console.log('bye')
+            }
+            await post.save();
+            return post;
+        } else {
+            throw new UserInputError('Post not found :(')
+        }
+    }
 }
 };
 
