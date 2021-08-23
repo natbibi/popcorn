@@ -2,15 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from "@apollo/client";
 
 import App from './App';
 
 const client = new ApolloClient({
-  uri: 'https://localhost:5000',
-  cache: new InMemoryCache()
+  uri: 'http://localhost:5000/',
+  cache: new InMemoryCache(),
+  connectToDevTools: true
 });
 
+client
+  .query({
+    query: gql`
+      query {
+        getPosts {
+          id
+          body
+        }
+      }
+    `
+  })
+  .then(result => console.log(result));
 
 ReactDOM.render(
   <React.StrictMode>
