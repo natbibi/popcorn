@@ -9,7 +9,7 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     cors: {
-		origin: 'http://localhost:3000',
+		origin: '*',
 		credentials: true
     },
 });
