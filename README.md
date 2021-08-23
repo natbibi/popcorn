@@ -27,7 +27,7 @@ It should load on: http://localhost:3000/
 ### Dependencies: 
    - Server: apollo-server, graphql, mongoose
    
-   - Client: react, react-router-dom, auth0-react
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql
 
 ### DevDependencies:
    - Server: nodemon
@@ -53,11 +53,14 @@ It should load on: http://localhost:3000/
 3. Design initial schema for Post and User 
 4. Add CRUD functions for creating a new user and creating / deleting posts 
 5. Add create and delete for comments on Posts and likes on Posts
+6. Add Like and Comment counter for posts 
 
 
 ## Bugs
 - [ ] `new Date().toISOString()` shows the wrong UK time zone - 1 hour behind 
 - [x] createPost and deletePost not working - Solved: add userID parameter
+- [x] empty posts can be created - Solved: add missing validation
+- [ ] unable to connect to Apollo Client 
  
 # Wins & Challenges
 
