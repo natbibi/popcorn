@@ -46,6 +46,7 @@ It should load on: http://localhost:3000/
 ### react-client
 1. Set up file structure for react-client with compnents, layout and views 
 2. Install and add config for Auth0 - signup/login/logout routes and protected route 
+3. Install and add config for @apollo/client dependencies - wrap ApolloProvider around App 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -60,7 +61,7 @@ It should load on: http://localhost:3000/
 - [ ] `new Date().toISOString()` shows the wrong UK time zone - 1 hour behind 
 - [x] createPost and deletePost not working - Solved: add userID parameter
 - [x] empty posts can be created - Solved: add missing validation
-- [ ] unable to connect to Apollo Client 
+- [x] unable to connect to Apollo Client - Solved: CORS Policy
  
 # Wins & Challenges
 
