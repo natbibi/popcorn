@@ -1,25 +1,43 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import { Menu, Segment } from 'semantic-ui-react';
 
-const MainNav = () => (
-    <div className="navbar-nav mr-auto">
-        <NavLink
-            to="/"
-            exact
-            className="nav-link"
-            activeClassName="router-link-exact-active"
-        >
-            Home
-        </NavLink>
-        <NavLink
-            to="/profile"
-            exact
-            className="nav-link"
-            activeClassName="router-link-exact-active"
-        >
-            Profile
-        </NavLink>
-    </div>
-);
+import { AuthNav } from "../";
+
+const MainNav = () => {
+
+
+    return (
+        <div className="main-nav">
+            <Segment inverted>
+                <Menu inverted secondary size="massive">
+                    <Menu.Item />
+                    <NavLink
+                        to="/"
+                        exact
+                        className="nav-link"
+                        activeClassName="router-link-exact-active"
+                    >
+                        Home
+                    </NavLink>
+
+                    <Menu.Item />
+                    <NavLink
+                        to="/profile"
+                        exact
+                        className="nav-link"
+                        activeClassName="router-link-exact-active"
+                    >
+                        Profile
+                    </NavLink>
+
+                    <Menu.Menu position="right">
+                        <AuthNav />
+                    </Menu.Menu>
+                </Menu>
+            </Segment>
+        </div>
+    );
+}
 
 export default MainNav;

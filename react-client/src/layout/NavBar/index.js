@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MainNav, AuthNav } from "../";
+import { MainNav } from "../";
 
 const NavBar = () => {
     return (
@@ -9,7 +9,6 @@ const NavBar = () => {
                 <div className="container">
                     <div className="navbar-brand logo" />
                     <MainNav />
-                    <AuthNav />
                 </div>
             </nav>
         </div>
