@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+    color: #FFFFFF;
+}
+
+.main-nav a button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

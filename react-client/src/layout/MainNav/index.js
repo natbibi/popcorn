@@ -10,7 +10,7 @@ const MainNav = () => {
     return (
         <div className="main-nav">
             <Segment inverted>
-                <Menu inverted secondary size="massive">
+                <Menu inverted secondary size="tiny">
                     <Menu.Item />
                     <NavLink
                         to="/"
