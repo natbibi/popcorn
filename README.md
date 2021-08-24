@@ -1,5 +1,7 @@
 # Hackathon: Popcorn
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8953fe7-7172-4be3-9b53-57c6b6b52bab/deploy-status)](https://app.netlify.com/sites/nat-popcorn/deploys)
+
 This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
 
 ## Description 
@@ -27,7 +29,7 @@ It should load on: http://localhost:3000/
 ### Dependencies: 
    - Server: apollo-server, graphql, mongoose
    
-   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react
 
 ### DevDependencies:
    - Server: nodemon
@@ -47,6 +49,7 @@ It should load on: http://localhost:3000/
 1. Set up file structure for react-client with compnents, layout and views 
 2. Install and add config for Auth0 - signup/login/logout routes and protected route 
 3. Install and add config for @apollo/client dependencies - wrap ApolloProvider around App 
+4. Add basic styling to layout components
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
