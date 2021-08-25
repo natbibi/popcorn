@@ -27,8 +27,11 @@ body {
 }
 
 .feed-container {
-    border: solid 1px red;
     flex-grow: 2;
 }
 
+div.content {
+    margin: 0.5rem;
+    color: grey;
+}
   
