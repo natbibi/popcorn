@@ -1,4 +1,5 @@
 export { default as AuthenticationButton } from './AuthenticationButton'
+export { default as CreatePost } from './CreatePost'
 export { default as Loading } from './Loading'
 export { default as LoginButton } from './LoginButton'
 export { default as LogoutButton } from './LogoutButton'
