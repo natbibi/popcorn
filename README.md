@@ -29,7 +29,7 @@ It should load on: http://localhost:3000/
 ### Dependencies: 
    - Server: apollo-server, graphql, mongoose
    
-   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment
 
 ### DevDependencies:
    - Server: nodemon
@@ -41,7 +41,7 @@ It should load on: http://localhost:3000/
 2. Set up server, database, and install necessary dependencies 
 3. Create react front-end using `create-react-app` 
 4. Create models for Posts and Users and resolvers for graphQL 
-
+5. Connect front end to back end and connect mongoDB database to AuthO 
 
 ## Changelog
 
@@ -50,6 +50,9 @@ It should load on: http://localhost:3000/
 2. Install and add config for Auth0 - signup/login/logout routes and protected route 
 3. Install and add config for @apollo/client dependencies - wrap ApolloProvider around App 
 4. Add basic styling to layout components
+5. Create three responsive columns using grid and flex for sidebar, feed and right sidebar 
+6. Fetch data from apollo-client using graphQL, map, and render in Posts component  
+7. WIP: Authed users can see and use CreatePost component to make a new post
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -58,6 +61,7 @@ It should load on: http://localhost:3000/
 4. Add CRUD functions for creating a new user and creating / deleting posts 
 5. Add create and delete for comments on Posts and likes on Posts
 6. Add Like and Comment counter for posts 
+7. Update schema with fields to match AuthO
 
 
 ## Bugs
