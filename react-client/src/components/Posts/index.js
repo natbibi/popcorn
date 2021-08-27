@@ -4,7 +4,6 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
-    console.log(likeCount)
 
     function likePost() {
         console.log('like post')
@@ -39,10 +38,10 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                     </Button>
 
                     <Button as='div' labelPosition='right' onClick={addComment}>
-                        <Button color='red' basic>
-                            <Icon name='comment' />
+                        <Button color='pink' basic>
+                            <Icon name='comments' />
                         </Button>
-                        <Label basic color='red' pointing='left'>
+                        <Label basic color='pink' pointing='left'>
                             {commentCount}
                         </Label>
                     </Button>
