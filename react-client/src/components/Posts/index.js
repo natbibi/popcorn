@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 
-import { LikeButton } from '../'
+import { DeleteButton, LikeButton } from '../'
 
 const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
     const { user } = useAuth0();
@@ -38,7 +38,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                             {commentCount}
                         </Label>
                     </Button>
-       
+                    {user && user.nickname === username && <DeleteButton postId={id} />}
                 </Card.Content>
             </Card>
         </>
