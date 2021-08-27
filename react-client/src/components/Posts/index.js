@@ -8,6 +8,8 @@ import { DeleteButton, LikeButton } from '../'
 
 const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
     const { user } = useAuth0();
+    const { sub } = user;
+    const mongoId = sub.substring(6)
 
     function addComment() {
         console.log('commented')
@@ -38,7 +40,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                             {commentCount}
                         </Label>
                     </Button>
-                    {user && user.nickname === username && <DeleteButton postId={id} />}
+                    {user && user.nickname === username && <DeleteButton postId={id} mongoId={mongoId}/>}
                 </Card.Content>
             </Card>
         </>
