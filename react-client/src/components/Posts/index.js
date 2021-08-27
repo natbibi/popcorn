@@ -2,12 +2,12 @@ import React from 'react';
 import { Card, Image, Button, Label, Icon } from 'semantic-ui-react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
+
+import { LikeButton } from '../'
 
 const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
-
-    function likePost() {
-        console.log('like post')
-    }
+    const { user } = useAuth0();
 
     function addComment() {
         console.log('commented')
@@ -28,14 +28,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
 
                 </Card.Content>
                 <Card.Content extra>
-                    <Button as='div' labelPosition='right' onClick={likePost}>
-                        <Button color='red' basic>
-                            <Icon name='heart' />
-                        </Button>
-                        <Label basic color='red' pointing='left'>
-                            {likeCount}
-                        </Label>
-                    </Button>
+                    <LikeButton user={user} post={{ id, likes, likeCount }} />
 
                     <Button as='div' labelPosition='right' onClick={addComment}>
                         <Button color='pink' basic>
@@ -45,6 +38,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                             {commentCount}
                         </Label>
                     </Button>
+       
                 </Card.Content>
             </Card>
         </>
