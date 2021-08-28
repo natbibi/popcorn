@@ -32,7 +32,7 @@ div.spinner {
     flex-grow: 1;
 }
 
-.feed-container {
+.feed-container, .single-post-container {
     flex-grow: 2;
 }
 
