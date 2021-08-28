@@ -12,19 +12,6 @@ const client = new ApolloClient({
   connectToDevTools: true
 });
 
-client
-  .query({
-    query: gql`
-      query {
-        getPosts {
-          id
-          body
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
