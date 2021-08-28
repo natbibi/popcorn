@@ -10,7 +10,7 @@ const DeleteButton = ({ postId, mongoId, commentId }) => {
 
 	const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
 
-	const [deleteOnClick, { error }] = useMutation(mutation, {
+	const [deleteOnClick] = useMutation(mutation, {
 		variables: {
 			postId,
 			userId,
