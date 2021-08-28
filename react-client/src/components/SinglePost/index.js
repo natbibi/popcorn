@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
-import { Card, Image, Button, Label, Icon } from 'semantic-ui-react';
+import { Card, Image, Button, Label, Icon, Form } from 'semantic-ui-react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, gql, useMutation } from '@apollo/client';
 
 import { DeleteButton, LikeButton } from '../../components'
 
@@ -17,28 +17,29 @@ const SinglePost = (props) => {
 
     const history = useHistory();
 
+    const [comment, setComment] = useState("");
+
     const { data: getPost } = useQuery(FETCH_POST_QUERY, {
         variables: {
             postId
         },
     });
 
+    const [addComment] = useMutation(ADD_COMMENT_MUTATION, {
+        update() {
+            setComment("")
+        },
+        variables: {
+            postId,
+            body: comment
+        }
+    })
+
     let renderPosts;
     if (!getPost) {
         renderPosts = <p>Loading post..</p>;
     } else {
-        const {
-            id,
-            body,
-            createdAt,
-            username,
-            likeCount,
-            likes,
-            commentCount,
-            comments
-        } = getPost.getPost;
-
-        console.log(getPost.getPost.body)
+        const { id, body, createdAt, username, likeCount, likes, commentCount, comments } = getPost.getPost;
 
         renderPosts = (
             <main className="single-post-container">
@@ -69,11 +70,53 @@ const SinglePost = (props) => {
                         {user && user.nickname === username && <DeleteButton postId={id} mongoId={mongoId} />}
                     </Card.Content>
                 </Card>
+                {user && <Card fluid>
+                    <Card.Content>
+                        <Card.Description><p>Add Comment</p></Card.Description>
+                        <Form>
+                            <Form.Field>
+                                <Form.Input
+                                    placeholder="What are your thoughts?"
+                                    name="body"
+                                    value={comment}
+                                    onChange={e => setComment(e.target.value)}
+                                    autoComplete="off"
+                                />
+                                <Button type="submit" inverted color="orange" onClick={addComment}>
+                                    Post!
+                                </Button>
+                            </Form.Field>
+                        </Form>
+                    </Card.Content>
+                </Card>}
+                {comments.map(comment => (
+                    <Card fluid key={comment.id}>
+                        <Card.Content>
+                            {user && user.nickname === comment.username && <DeleteButton postId={id} commentId={comment.id} />}
+                            <Card.Header>{comment.username}</Card.Header>
+                            <Card.Meta>{moment(createdAt).fromNow(true)}</Card.Meta>
+                            <Card.Description>{comment.body}</Card.Description>
+                        </Card.Content>
+                    </Card>
+                ))}
+
             </main>
         );
     }
     return renderPosts;
 }
+
+const ADD_COMMENT_MUTATION = gql`
+    mutation($postId: String!, $body: String!) {
+        createComment(postId: $postId, body: $body) {
+            id 
+            comments {
+                id body createdAt username
+            }
+            commentCount
+        }
+    }
+`
 
 const FETCH_POST_QUERY = gql`
   query($postId: ID!) {
