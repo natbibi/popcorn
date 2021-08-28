@@ -1,6 +1,6 @@
 import React from "react";
 const loadingImg =
-  "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
+  "https://i.giphy.com/media/65LcwStZ4smNeDa6jQ/giphy.webp";
 
 const Loading = () => (
   <div className="spinner">

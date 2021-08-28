@@ -3,6 +3,12 @@ body {
     color: #FFFFFF;
 }
 
+div.spinner {
+    display: grid;
+    place-items: center;
+    margin-top: 7rem;
+}
+
 .main-nav a button {
     display: flex;
     justify-content: center;
@@ -28,6 +34,18 @@ body {
 
 .feed-container {
     flex-grow: 2;
+}
+
+div.field {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: flex-start;
+    margin-block: 2rem;
+}
+
+button.ui.orange.inverted.button {
+    margin: 2px;
 }
 
 div.content {
