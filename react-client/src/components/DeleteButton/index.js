@@ -5,34 +5,36 @@ import { Button } from 'semantic-ui-react';
 
 import { FETCH_POSTS_QUERY } from '../../graphql';
 
-const DeleteButton = ({ postId, mongoId }) => {
+const DeleteButton = ({ postId, mongoId, commentId }) => {
 	const userId = mongoId
 
-	const [deleteOnClick, { error }] = useMutation(DELETE_POST_MUTATION, {
+	const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
+
+	const [deleteOnClick, { error }] = useMutation(mutation, {
 		variables: {
 			postId,
-			userId
+			userId,
+			commentId
 		},
 		update(proxy) {
-			const data = proxy.readQuery({
-				query: FETCH_POSTS_QUERY
-			});
-			let newData = [...data.getPosts];
-			newData = [data.getPosts.filter((p) => p.id !== postId)];
-			proxy.writeQuery({
-				query: FETCH_POSTS_QUERY,
-				data: {
-					...data,
-					getPosts: {
-						newData,
+			if (!commentId) {
+				const data = proxy.readQuery({
+					query: FETCH_POSTS_QUERY
+				});
+				let newData = [...data.getPosts];
+				newData = [data.getPosts.filter((p) => p.id !== postId)];
+				proxy.writeQuery({
+					query: FETCH_POSTS_QUERY,
+					data: {
+						...data,
+						getPosts: {
+							newData,
+						},
 					},
-				},
-
-			})
+				})
+			}
 		}
 	})
-
-	console.log(JSON.stringify(error, null, 2));
 
 	return (
 		<Button
@@ -46,6 +48,18 @@ const DeleteButton = ({ postId, mongoId }) => {
 const DELETE_POST_MUTATION = gql`
   mutation deletePost($postId: String!, $userId: String!){
     deletePost(postId: $postId, userId: $userId)
+  }
+`
+
+const DELETE_COMMENT_MUTATION = gql`
+  mutation deleteComment($postId: String!, $commentId: String!){
+    deleteComment(postId: $postId, commentId: $commentId){
+		id
+		comments {
+			id username body createdAt 
+		}
+		commentCount
+	}
   }
 `
 
