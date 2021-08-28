@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import { Card, Image, Button, Label, Icon } from 'semantic-ui-react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
@@ -13,6 +14,8 @@ const SinglePost = (props) => {
     const mongoId = sub.substring(6)
 
     const postId = props.match.params.postId;
+
+    const history = useHistory();
 
     const { data: getPost } = useQuery(FETCH_POST_QUERY, {
         variables: {
@@ -39,6 +42,7 @@ const SinglePost = (props) => {
 
         renderPosts = (
             <main className="single-post-container">
+                <Button id="back-button" onClick={history.goBack}>back</Button>
                 <Card fluid color="red">
                     <Card.Content>
                         <Image
