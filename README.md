@@ -42,6 +42,7 @@ It should load on: http://localhost:3000/
 3. Create react front-end using `create-react-app` 
 4. Create models for Posts and Users and resolvers for graphQL 
 5. Connect front end to back end and connect mongoDB database to AuthO 
+6. Set up layout and add CRUD functionality 
 
 ## Changelog
 
@@ -53,6 +54,7 @@ It should load on: http://localhost:3000/
 5. Create three responsive columns using grid and flex for sidebar, feed and right sidebar 
 6. Fetch data from apollo-client using graphQL, map, and render in Posts component  
 7. WIP: Authed users can see and use CreatePost component to make a new post
+9. Add like post, delete post and create route match page for a single post 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -69,6 +71,8 @@ It should load on: http://localhost:3000/
 - [x] createPost and deletePost not working - Solved: add userID parameter
 - [x] empty posts can be created - Solved: add missing validation
 - [x] unable to connect to Apollo Client - Solved: CORS Policy
+- [x] likeCount and commentCount now showing - Solved: incorrect fetching query call 
+- [x] typeDef errors - Solved: not correctly using ID! or String! 
  
 # Wins & Challenges
 
