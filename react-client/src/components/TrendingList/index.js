@@ -8,7 +8,7 @@ const TrendingList = ({ list }) => {
     return (
         <>
             <div className="img-container">
-                <img src={path} alt={list.original_title} />
+                <img src={path} alt={list.original_title} className="trending-poster"/>
             </div>
         </>
     );
