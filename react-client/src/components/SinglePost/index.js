@@ -39,7 +39,7 @@ const SinglePost = (props) => {
     if (!getPost) {
         renderPosts = <p>Loading post..</p>;
     } else {
-        const { id, body, createdAt, username, likeCount, likes, commentCount, comments } = getPost.getPost;
+        const { id, body, createdAt, username, likeCount, likes, commentCount, comments, userAvatar } = getPost.getPost;
 
         renderPosts = (
             <main className="single-post-container">
@@ -48,8 +48,9 @@ const SinglePost = (props) => {
                     <Card.Content>
                         <Image
                             floated='right'
-                            size='mini'
-                            src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+                            size='big'
+                            src={userAvatar}
+                            avatar
                         />
                         <Card.Header>{username}</Card.Header>
                         <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
@@ -125,6 +126,7 @@ const FETCH_POST_QUERY = gql`
       body
       createdAt
       username
+      userAvatar
       likeCount
       likes {
         username

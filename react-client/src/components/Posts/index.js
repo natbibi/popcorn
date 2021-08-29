@@ -17,8 +17,9 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                 <Card.Content>
                     <Image
                         floated='right'
-                        size='mini'
+                        size='big'
                         src={userAvatar}
+                        avatar
                     />
                     <Card.Header>{username}</Card.Header>
                     <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
