@@ -11,10 +11,6 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
     const { sub } = user;
     const mongoId = sub.substring(6)
 
-    function addComment() {
-        console.log('commented')
-    }
-
     return (
         <>
             <Card fluid color="red">
@@ -32,7 +28,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                 <Card.Content extra>
                     <LikeButton user={user} post={{ id, likes, likeCount }} />
 
-                    <Button as='div' labelPosition='right' onClick={addComment}>
+                    <Button as='div' labelPosition='right' as={Link} to={`/posts/${id}`}>
                         <Button color='pink' basic>
                             <Icon name='comments' />
                         </Button>
