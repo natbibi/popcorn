@@ -7,7 +7,7 @@ import './App.css';
 
 import { Loading, SinglePost } from "./components";
 import { NavBar, Footer, SideBar, RightSideBar } from "./layout"
-import { Home, Profile } from "./views";
+import { Home } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 
 const App = () => {
@@ -35,7 +35,7 @@ const App = () => {
         <ScrollToTop />
         <Switch>
           <ProtectedRoute path="/" exact component={Home} />
-          <ProtectedRoute path="/profile" component={Profile} />
+          {/* <ProtectedRoute path="/profile" component={Profile} /> */}
           <ProtectedRoute exact path={`/posts/:postId`} component={SinglePost} />
         </Switch>
         <Footer />

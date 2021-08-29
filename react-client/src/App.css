@@ -23,21 +23,31 @@ div.spinner {
     flex-direction: row;
     grid-template-rows: auto auto 1fr auto auto;
     width: 100%;
+    gap: 5px;
 }
 
 .sidebar-container {
     /* border: solid 1px red; */
-    min-width: 300px;
+    min-width: 250px;
 }
 
 img.trending-poster {
     width: 145px;
 }
 
-.feed-container, .single-post-container {
+.feed-container, .single-post-container, .profile-container {
     max-width: 600px;
     flex-grow: 1;
     margin-bottom: 5rem;
+}
+
+main.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    position: sticky;
+    top: 1rem;
 }
 
 div.field {
