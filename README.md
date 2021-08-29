@@ -41,8 +41,10 @@ It should load on: http://localhost:3000/
 2. Set up server, database, and install necessary dependencies 
 3. Create react front-end using `create-react-app` 
 4. Create models for Posts and Users and resolvers for graphQL 
-5. Connect front end to back end and connect mongoDB database to AuthO 
-6. Set up layout and add CRUD functionality 
+5. Deploy frontend on to Netlify!
+6. Connect front end to back end and connect mongoDB database to AuthO 
+7. Set up layout and add CRUD functionality 
+8. Deploy backend on to Heroku!
 
 ## Changelog
 
@@ -52,9 +54,11 @@ It should load on: http://localhost:3000/
 3. Install and add config for @apollo/client dependencies - wrap ApolloProvider around App 
 4. Add basic styling to layout components
 5. Create three responsive columns using grid and flex for sidebar, feed and right sidebar 
-6. Fetch data from apollo-client using graphQL, map, and render in Posts component  
-7. WIP: Authed users can see and use CreatePost component to make a new post
-9. Add like post, delete post and create route match page for a single post 
+6. Prepare files and config for deployment  
+7. Fetch data from apollo-client using graphQL, map, and render in Posts component  
+8. WIP: Authed users can see and use CreatePost component to make a new post
+9. Add like post, delete post and create route match page for a single post
+10. Add create comment and delete comments on a post   
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -64,6 +68,7 @@ It should load on: http://localhost:3000/
 5. Add create and delete for comments on Posts and likes on Posts
 6. Add Like and Comment counter for posts 
 7. Update schema with fields to match AuthO
+8. Prepare files and config for deployment 
 
 
 ## Bugs
