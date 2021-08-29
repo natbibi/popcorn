@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Switch, useLocation } from "react-router-dom";
+import { Switch, useLocation, Route } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import 'semantic-ui-css/semantic.min.css';
@@ -7,7 +7,7 @@ import './App.css';
 
 import { Loading, SinglePost } from "./components";
 import { NavBar, Footer, SideBar, RightSideBar } from "./layout"
-import { Home } from "./views";
+import { Home, Search } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 
 const App = () => {
@@ -37,6 +37,7 @@ const App = () => {
           <ProtectedRoute path="/" exact component={Home} />
           {/* <ProtectedRoute path="/profile" component={Profile} /> */}
           <ProtectedRoute exact path={`/posts/:postId`} component={SinglePost} />
+          <Route exact path="/search" component={Search} />
         </Switch>
         <Footer />
         <RightSideBar />

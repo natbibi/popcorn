@@ -23,12 +23,12 @@ const MainNav = () => {
 
                     <Menu.Item />
                     <NavLink
-                        to="/profile"
+                        to="/search"
                         exact
                         className="nav-link"
                         activeClassName="router-link-exact-active"
                     >
-                        Profile
+                        Search
                     </NavLink>
 
                     <Menu.Menu position="right">

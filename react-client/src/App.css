@@ -35,7 +35,7 @@ img.trending-poster {
     width: 145px;
 }
 
-.feed-container, .single-post-container, .profile-container {
+.feed-container, .single-post-container, .search-container {
     max-width: 600px;
     flex-grow: 1;
     margin-bottom: 5rem;
