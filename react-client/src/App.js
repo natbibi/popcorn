@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Switch, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import 'semantic-ui-css/semantic.min.css';
@@ -17,11 +17,22 @@ const App = () => {
     return <Loading />;
   }
 
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
   return (
     <>
       <NavBar />
       <main className="main-layout">
         <SideBar />
+        <ScrollToTop />
         <Switch>
           <ProtectedRoute path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />

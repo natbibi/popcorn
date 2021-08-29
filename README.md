@@ -59,7 +59,8 @@ It should load on: http://localhost:3000/
 8. WIP: Authed users can see and use CreatePost component to make a new post
 9. Add like post, delete post and create route match page for a single post
 10. Add create comment and delete comments on a post   
-11. Fetch top 10 trending movies and shows data from [themoviedb](https://www.themoviedb.org/)  
+11. Fetch top 10 trending movies and shows data from [themoviedb](https://www.themoviedb.org/) 
+12. Show user avatar from Auth0 on the posts they created 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -69,7 +70,8 @@ It should load on: http://localhost:3000/
 5. Add create and delete for comments on Posts and likes on Posts
 6. Add Like and Comment counter for posts 
 7. Update schema with fields to match AuthO
-8. Prepare files and config for deployment 
+8. Prepare files and config for deployment '
+9. Add userAvatar to Post Schema 
 
 
 ## Bugs
@@ -81,6 +83,7 @@ It should load on: http://localhost:3000/
 - [x] typeDef errors - Solved: not correctly using ID! or String! 
 - [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be log in 
 - [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
+- [x] Links which open to another page in app doesn't open from top of new page - Solved: [Scroll Restoration](https://reactrouter.com/web/guides/scroll-restoration) 
  
 # Wins & Challenges
 
