@@ -29,7 +29,7 @@ It should load on: http://localhost:3000/
 ### Dependencies: 
    - Server: apollo-server, graphql, mongoose
    
-   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment, axios
 
 ### DevDependencies:
    - Server: nodemon
@@ -59,6 +59,7 @@ It should load on: http://localhost:3000/
 8. WIP: Authed users can see and use CreatePost component to make a new post
 9. Add like post, delete post and create route match page for a single post
 10. Add create comment and delete comments on a post   
+11. Fetch top 10 trending movies and shows data from [themoviedb](https://www.themoviedb.org/)  
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -78,6 +79,8 @@ It should load on: http://localhost:3000/
 - [x] unable to connect to Apollo Client - Solved: CORS Policy
 - [x] likeCount and commentCount now showing - Solved: incorrect fetching query call 
 - [x] typeDef errors - Solved: not correctly using ID! or String! 
+- [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be log in 
+- [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
  
 # Wins & Challenges
 
