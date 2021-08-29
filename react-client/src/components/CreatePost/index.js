@@ -9,8 +9,9 @@ const CreatePost = () => {
     const { user } = useAuth0();
     const { sub } = user;
     const mongoId = sub.substring(6)
+    const userAvatar = user.picture
 
-    const [values, setValues] = useState({ body: "", userId: mongoId });
+    const [values, setValues] = useState({ body: "", userId: mongoId, userAvatar: userAvatar });
 
     const onChange = (e) => {
         setValues(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -79,12 +80,13 @@ const CreatePost = () => {
 
 
 const CREATE_POST_MUTATION = gql`
-  mutation createPost($body: String!, $userId: ID!) {
-    createPost(body: $body, userId: $userId) {
+  mutation createPost($body: String!, $userId: ID!, $userAvatar: String!) {
+    createPost(body: $body, userId: $userId, userAvatar: $userAvatar) {
       id
       body
       createdAt
       username
+      userAvatar
       likes {
         id
         username

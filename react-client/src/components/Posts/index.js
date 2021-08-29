@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import { DeleteButton, LikeButton } from '../'
 
-const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
+const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes, userAvatar } }) => {
     const { user } = useAuth0();
     const { sub } = user;
     const mongoId = sub.substring(6)
@@ -18,7 +18,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                     <Image
                         floated='right'
                         size='mini'
-                        src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+                        src={userAvatar}
                     />
                     <Card.Header>{username}</Card.Header>
                     <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
