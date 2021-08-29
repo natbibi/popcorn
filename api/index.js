@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const { MONGODB } = require('./config.js');
 
 const server = new ApolloServer({
     typeDefs,
@@ -14,7 +13,7 @@ const server = new ApolloServer({
     },
 });
 
-const connectionUrl = process.env.MONGODB || MONGODB
+const connectionUrl = process.env.MONGODB
 
 mongoose.connect(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
