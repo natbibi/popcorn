@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
 	const { user } = useAuth0();
-	const { nickname, picture, email } = user;
+	const { nickname, picture } = user;
 
 	return (
 		<main className="profile-container">
