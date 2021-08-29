@@ -32,10 +32,12 @@ const RightSideBar = () => {
     return (
         <>
             <aside className="sidebar-container right">
-                <h3>Trending Today </h3>
-                {trendingData && trendingData.slice(0, 5).map((r) => (
-                    <TrendingList key={r.id} list={r} />
-                ))}
+                <h3 style={{ paddingLeft: "3rem" }}>Trending Today </h3>
+                <ol>
+                    {trendingData && trendingData.slice(0, 10).map((r) => (
+                        <li><TrendingList key={r.id} list={r} /></li>
+                    ))}
+                </ol>
                 {error && <div id="error">{error}</div>}
             </aside>
         </>
