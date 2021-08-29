@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
-
+import { TrendingList } from "../../components";
 
 const RightSideBar = () => {
     const [trendingData, setTrendingData] = useState();
@@ -33,7 +33,10 @@ const RightSideBar = () => {
         <>
             <aside className="sidebar-container right">
                 <h3>Trending Today </h3>
-              
+                {trendingData && trendingData.slice(0, 5).map((r) => (
+                    <TrendingList key={r.id} list={r} />
+                ))}
+                {error && <div id="error">{error}</div>}
             </aside>
         </>
     );
