@@ -33,7 +33,7 @@ div.spinner {
 }
 
 .feed-container, .single-post-container {
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 div.field {
@@ -52,4 +52,3 @@ div.content {
     margin: 0.5rem;
     color: grey;
 }
-  
