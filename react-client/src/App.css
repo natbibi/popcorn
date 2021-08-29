@@ -6,7 +6,7 @@ body {
 div.spinner {
     display: grid;
     place-items: center;
-    margin-top: 7rem;
+    height: 90vh;
 }
 
 .main-nav a button {
