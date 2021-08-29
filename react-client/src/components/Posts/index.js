@@ -15,13 +15,20 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
         <>
             <Card fluid color="red">
                 <Card.Content>
-                    <Image
+                    {userAvatar ? (<Image
                         floated='right'
                         size='big'
                         src={userAvatar}
                         avatar
-                    />
-                    <Card.Header>{username}</Card.Header>
+                    />) :
+                        (<Image
+                            floated='right'
+                            size='big'
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/popcorn_1f37f.png"
+                            avatar
+                        />)
+                    }
+                    < Card.Header > {username}</Card.Header>
                     <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
                     <Card.Description>{body}</Card.Description>
 
@@ -37,7 +44,7 @@ const Posts = ({ post: { body, createdAt, id, username, likeCount, commentCount,
                             {commentCount}
                         </Label>
                     </Button>
-                    {user && user.nickname === username && <DeleteButton postId={id} mongoId={mongoId}/>}
+                    {user && user.nickname === username && <DeleteButton postId={id} mongoId={mongoId} />}
                 </Card.Content>
             </Card>
         </>

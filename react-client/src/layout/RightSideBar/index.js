@@ -24,7 +24,7 @@ const RightSideBar = () => {
                 setTrendingData(data.results)
             } catch {
                 console.warn("There's an error!!! Cannot fetch data!")
-                setError('❌ Error loading list')
+                setError('Oops, please try again!')
             }
         } fetchTrending();
     }, []);
