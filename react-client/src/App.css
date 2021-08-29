@@ -70,3 +70,8 @@ div.content {
 #error {
     text-align: center;
 }
+
+.popular-container {
+    display: flex;
+    flex-flow: row wrap;
+}
