@@ -23,9 +23,9 @@ const App = () => {
       <main className="main-layout">
         <SideBar />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <ProtectedRoute path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
-          <Route exact path={`/posts/:postId`} component={SinglePost} />
+          <ProtectedRoute exact path={`/posts/:postId`} component={SinglePost} />
         </Switch>
         <Footer />
         <RightSideBar />
