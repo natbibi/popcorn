@@ -17,23 +17,27 @@ div.spinner {
 
 .main-layout {
     display: grid;
-    height: 86vh;
+    justify-content: center;
     margin: 1em;
     display: flex;
     flex-direction: row;
-    grid-template-rows: auto auto 1fr auto auto auto;
-    gap: 24px;
-  
+    grid-template-rows: auto auto 1fr auto auto;
+    width: 100%;
 }
 
 .sidebar-container {
-    border: solid 1px red;
-    /* width: 100%; */
-    flex-grow: 1;
+    /* border: solid 1px red; */
+    min-width: 300px;
+}
+
+img.trending-poster {
+    width: 145px;
 }
 
 .feed-container, .single-post-container {
+    max-width: 600px;
     flex-grow: 1;
+    margin-bottom: 5rem;
 }
 
 div.field {
