@@ -25,7 +25,7 @@ const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
             </Button>
         )
     ) : (
-        <Button as={Link} to='/login' color='red' basic>
+        <Button as={Link} to='/login' color='red'>
                 <Icon name='heart' />
             </Button>
     )
