@@ -7,7 +7,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from './App';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/',
+  uri: 'https://nat-popcorn.herokuapp.com/',
   cache: new InMemoryCache(),
   connectToDevTools: true
 });
