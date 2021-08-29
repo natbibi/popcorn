@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     Mutation: {
-        async createPost(_, { userId, body }) {
+        async createPost(_, { userId, body, userAvatar }) {
             const user = await User.findById(userId)
 
             if (body.trim() === '') {
@@ -37,6 +37,7 @@ module.exports = {
             if (user) {
                 const newPost = new Post({
                     body,
+                    userAvatar,
                     user: user.id,
                     username: user.username,
                     createdAt: new Date().toISOString()
