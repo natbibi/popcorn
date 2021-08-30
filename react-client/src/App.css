@@ -80,7 +80,18 @@ div.content {
     margin-top: 7rem;
     text-align: center;
 }
+nav a {
+    color: #FFFFFF;
+}
+
+nav a:hover {
+    color: rgb(253, 99, 99);
+}
 
 a {
     color: rgb(253, 99, 99);
+}
+
+a:hover {
+    color: #FFFFFF;
 }
