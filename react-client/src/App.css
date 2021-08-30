@@ -80,3 +80,7 @@ div.content {
     margin-top: 7rem;
     text-align: center;
 }
+
+a {
+    color: rgb(253, 99, 99);
+}
