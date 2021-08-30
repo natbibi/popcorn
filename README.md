@@ -3,10 +3,13 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d8953fe7-7172-4be3-9b53-57c6b6b52bab/deploy-status)](https://app.netlify.com/sites/nat-popcorn/deploys)
 ⚖️ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
+This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter). Check out my [blog post](https://natalie.hashnode.dev/popcorn)!
+
+![Popcorn](https://user-images.githubusercontent.com/58271566/131374759-e2abd1d4-4335-4f81-bc36-d64af0bc49d6.gif)
+
 
 ## Description 
-Popcorn is a social media app for movies and tv shows using the MERNG Stack - MongoDb, Express.js, React.js, Node.js, GraphQL.
+Popcorn is a social media app for movies and tv shows using the MERNG Stack - MongoDb, Express.js, React.js, Node.js, GraphQL. Users can create posts and have discussions related to tv series and movies, see list of top trending hashtags, search for something to watch and add to your list.
 
 # Installation and Usage
 Clone or download this repo.    
@@ -84,7 +87,7 @@ It should load on: http://localhost:3000/
 - [x] unable to connect to Apollo Client - Solved: CORS Policy
 - [x] likeCount and commentCount not showing - Solved: incorrect fetching query call 
 - [x] typeDef errors - Solved: not correctly using ID! or String! 
-- [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be log in 
+- [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be logged in 
 - [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
 - [x] Links which open to another page in app doesn't open from top of new page - Solved: [Scroll Restoration](https://reactrouter.com/web/guides/scroll-restoration) 
 - [x] .env variable not read in api - Solved: install dotenv dependency
@@ -101,3 +104,8 @@ It should load on: http://localhost:3000/
 ### Challenges  
 - Understanding and implementing GraphQL because it's new to me! 
 - Managing time to complete this project alongside my full time job and other commitments 
+
+# Future Features
+- Users can add items to their favourites / watch later list
+- Sort posts by # Hashtags and show trending hashtags
+- Ability to interact with movie poster -> show more details
