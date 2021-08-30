@@ -31,6 +31,16 @@ const MainNav = () => {
                         Search
                     </NavLink>
 
+                    <Menu.Item />
+                    <NavLink
+                        to="/mylist"
+                        exact
+                        className="nav-link"
+                        activeClassName="router-link-exact-active"
+                    >
+                        My List
+                    </NavLink>
+
                     <Menu.Menu position="right">
                         <AuthNav />
                     </Menu.Menu>

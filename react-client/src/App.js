@@ -7,7 +7,7 @@ import './App.css';
 
 import { Loading, SinglePost } from "./components";
 import { NavBar, Footer, SideBar, RightSideBar } from "./layout"
-import { Home, SearchPage } from "./views";
+import { Home, SearchPage, MyList } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 
 const App = () => {
@@ -37,6 +37,7 @@ const App = () => {
 					<ProtectedRoute path="/" exact component={Home} />
 					<ProtectedRoute exact path={`/posts/:postId`} component={SinglePost} />
 					<Route exact path="/search" component={SearchPage} />
+					<ProtectedRoute exact path={`/mylist`} component={MyList} />
 				</Switch>
 				<Footer />
 				<RightSideBar />
