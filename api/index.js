@@ -1,3 +1,4 @@
+const dotenv = require('dotenv');
 const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
 
@@ -13,14 +14,15 @@ const server = new ApolloServer({
     },
 });
 
-const connectionUrl = process.env.MONGODB
+dotenv.config();
+const connectionUrl = process.env.MONGODB;
 
 mongoose.connect(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        console.log('MongoDB Connected');
+        console.log('MongoDB Connected 🌱');
         return server.listen({ port: process.env.PORT || 5000 });
     })
     // Running on express via Apollo Server
     .then(res => {
-        console.log(`Server running at ${res.url}`)
+        console.log(`Server running at ${res.url} 🚀`)
     })
