@@ -25,7 +25,7 @@ const SinglePost = (props) => {
         },
     });
 
-    const [addComment] = useMutation(ADD_COMMENT_MUTATION, {
+    const [addComment, { error }] = useMutation(ADD_COMMENT_MUTATION, {
         update() {
             setComment("")
         },
@@ -84,17 +84,25 @@ const SinglePost = (props) => {
                         <Form>
                             <Form.Field>
                                 <Form.Input
-                                    placeholder="What are your thoughts?"
+                                    placeholder="What are your thoughts? 💬"
                                     name="body"
                                     value={comment}
                                     onChange={e => setComment(e.target.value)}
                                     autoComplete="off"
+                                    error={error ? true : false}
                                 />
                                 <Button type="submit" inverted color="orange" onClick={addComment}>
                                     Post!
                                 </Button>
                             </Form.Field>
                         </Form>
+                        {error && (
+                            <div className="ui error message" style={{ marginBottom: 20 }}>
+                                <ul className="list">
+                                    <li>{error.graphQLErrors[0].message}</li>
+                                </ul>
+                            </div>
+                        )}
                     </Card.Content>
                 </Card>}
                 {comments.map(comment => (
