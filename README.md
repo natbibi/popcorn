@@ -1,6 +1,7 @@
 # Hackathon: Popcorn
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d8953fe7-7172-4be3-9b53-57c6b6b52bab/deploy-status)](https://app.netlify.com/sites/nat-popcorn/deploys)
+🚀 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=nat-popcorn&style=flat) ⚖️ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
 
@@ -12,7 +13,7 @@ Clone or download this repo.
 Navigate to root directory of this repository and open the terminal:   
 
 To start up the dev server:     
-`npm start`
+`npm start`  
 `npm install` 
 
 It should load on: http://localhost:5000/
@@ -34,8 +35,6 @@ It should load on: http://localhost:3000/
 
 ### DevDependencies:
    - Server: nodemon
-   
-   - Client: 
 
 # Process 
 1. Plan! Come up with an idea on paper, create a wireframe with MoqUps 
@@ -64,6 +63,7 @@ It should load on: http://localhost:3000/
 12. Show user avatar from Auth0 on the posts they created 
 13. Add Search page which sorts data from [themoviedb](https://www.themoviedb.org/) by Most Popular, Best Rated and Highest Grossing
 14. WIP: Mock data for trending hashtags 
+15. WIP: Create MyList Page - users can add shows to a watchlist 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -82,7 +82,7 @@ It should load on: http://localhost:3000/
 - [x] createPost and deletePost not working - Solved: add userID parameter
 - [x] empty posts can be created - Solved: add missing validation
 - [x] unable to connect to Apollo Client - Solved: CORS Policy
-- [x] likeCount and commentCount now showing - Solved: incorrect fetching query call 
+- [x] likeCount and commentCount not showing - Solved: incorrect fetching query call 
 - [x] typeDef errors - Solved: not correctly using ID! or String! 
 - [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be log in 
 - [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
