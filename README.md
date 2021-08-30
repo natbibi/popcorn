@@ -13,6 +13,7 @@ Navigate to root directory of this repository and open the terminal:
 
 To start up the dev server:     
 `npm start`
+`npm install` 
 
 It should load on: http://localhost:5000/
 
@@ -27,9 +28,9 @@ It should load on: http://localhost:3000/
 - HTML, CSS, JavaScript
 
 ### Dependencies: 
-   - Server: apollo-server, graphql, mongoose
+   - Server: apollo-server, graphql, mongoose, dotenv
    
-   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment, axios
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment, axios, react-mentions, html-react-parser
 
 ### DevDependencies:
    - Server: nodemon
@@ -61,6 +62,8 @@ It should load on: http://localhost:3000/
 10. Add create comment and delete comments on a post   
 11. Fetch top 10 trending movies and shows data from [themoviedb](https://www.themoviedb.org/) 
 12. Show user avatar from Auth0 on the posts they created 
+13. Add Search page which sorts data from [themoviedb](https://www.themoviedb.org/) by Most Popular, Best Rated and Highest Grossing
+14. WIP: Mock data for trending hashtags 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -84,12 +87,17 @@ It should load on: http://localhost:3000/
 - [x] Shows blank page if user is not logged in - Temp Solved: Protect all routes so users must be log in 
 - [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
 - [x] Links which open to another page in app doesn't open from top of new page - Solved: [Scroll Restoration](https://reactrouter.com/web/guides/scroll-restoration) 
+- [x] .env variable not read in api - Solved: install dotenv dependency
+- [ ] posting comment on a post will return comment by OP's instead of current user 
+- [ ] likeButton ternary not functioning properly (if liking other user's posts, button doesn't change color)
  
 # Wins & Challenges
 
 ### Wins
 - MongoDB account set up and connection went well!
 - Finding a small typo after a long time 😭 
+- Deployment to Heroku and Netlify was easy process. First time deploying apollo-server but it was straightforward and well documented  
 
 ### Challenges  
-- Understanding and implementing GraphQL because it's new to me!
+- Understanding and implementing GraphQL because it's new to me! 
+- Managing time to complete this project alongside my full time job and other commitments 
