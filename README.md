@@ -34,7 +34,7 @@ It should load on: http://localhost:3000/
 ### Dependencies: 
    - Server: apollo-server, graphql, mongoose, dotenv
    
-   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment, axios, react-mentions, html-react-parser
+   - Client: react, react-router-dom, auth0-react, @apollo/client, graphql, semantic-ui-css, semantic-ui-react, moment, axios
 
 ### DevDependencies:
    - Server: nodemon
