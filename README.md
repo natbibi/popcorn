@@ -1,7 +1,7 @@
 # Hackathon: Popcorn
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d8953fe7-7172-4be3-9b53-57c6b6b52bab/deploy-status)](https://app.netlify.com/sites/nat-popcorn/deploys)
-🚀 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=nat-popcorn&style=flat) ⚖️ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+⚖️ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter).
 
