@@ -75,3 +75,8 @@ div.content {
     display: flex;
     flex-flow: row wrap;
 }
+
+.hashtag-container {
+    margin-top: 7rem;
+    text-align: center;
+}
