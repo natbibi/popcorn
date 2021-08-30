@@ -2,19 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Dropdown } from 'semantic-ui-react';
 import axios from 'axios';
 
-import { PopularList } from "../../components";
+import { DropdownResultsList } from "../../components";
 
 const SearchPage = () => {
     const [inputData, setInputData] = useState("popularity.desc");
     const [error, setError] = useState();
     const [searchResults, setSearchResults] = useState([]);
    
-    // const onChange = (e) => {
-    //     setInputData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    //     console.log(setInputData)
-    // };
-
-    console.log(inputData)
+    const onChange = (e, {value}) => {
+        setInputData(value);
+    };
 
     const options = [
         {
@@ -23,9 +20,14 @@ const SearchPage = () => {
             value: 'popularity.desc'
         },
         {
-            key: 'popularity.asc',
-            text: 'Least Popular',
-            value: 'popularity.asc'
+            key: 'vote_average.desc',
+            text: 'Best Rated',
+            value: 'vote_average.desc'
+        },
+        {
+            key: 'revenue.desc',
+            text: 'Highest Grossing',
+            value: 'revenue.desc'
         },
     ]
 
@@ -70,14 +72,12 @@ const SearchPage = () => {
                     fluid
                     selection
                     options={options}
-                    onSelect={(e, { value }) => setInputData(value)}
+                    onChange={onChange}
                 />
 
-
-                <h3>Popular</h3>
                 <section className="popular-container">
                     {searchResults && searchResults.slice(0, 20).map((r) => (
-                        <PopularList key={r.id} list={r} />
+                        <DropdownResultsList key={r.id} list={r} />
                     ))}
 
                     {error && <div id="error">{error}</div>}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PopularList = ({ list }) => {
+const DropdownResultsList = ({ list }) => {
 
     const path = `https://image.tmdb.org/t/p/w200${list.poster_path}`
 
@@ -13,4 +13,4 @@ const PopularList = ({ list }) => {
     );
 };
 
-export default PopularList;
+export default DropdownResultsList;
