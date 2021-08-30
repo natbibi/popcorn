@@ -68,10 +68,8 @@ const CreatePost = () => {
             </Form>
 
             {error && (
-                <div className="ui error message" style={{ marginBottom: 20 }}>
-                    <ul className="list">
-                        <li>{error.graphQLErrors[0].message}</li>
-                    </ul>
+                <div className="ui error message" style={{ marginBottom: "1rem", marginTop: "0" }}>
+                    {error.graphQLErrors[0].message}
                 </div>
             )}
         </>
