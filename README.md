@@ -5,8 +5,7 @@
 
 This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter). Check out my [blog post](https://natalie.hashnode.dev/popcorn)!
 
-![Popcorn](https://user-images.githubusercontent.com/58271566/131374759-e2abd1d4-4335-4f81-bc36-d64af0bc49d6.gif)
-
+![Popcorn](https://user-images.githubusercontent.com/58271566/131402677-e9831d88-dc8d-460c-b0e7-3b6cef473cf1.gif)
 
 ## Description 
 Popcorn is a social media app for movies and tv shows using the MERNG Stack - MongoDb, Express.js, React.js, Node.js, GraphQL. Users can create posts and have discussions related to tv series and movies, see list of top trending hashtags, search for something to watch and add to your list.
