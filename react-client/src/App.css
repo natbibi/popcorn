@@ -9,6 +9,11 @@ div.spinner {
     height: 90vh;
 }
 
+.router-link-exact-active {
+    font-weight: 900;
+    color: white;
+}
+
 .main-nav a button {
     display: flex;
     justify-content: center;
@@ -81,7 +86,7 @@ div.content {
     text-align: center;
 }
 nav a {
-    color: #FFFFFF;
+    color: #a4a5a5;
 }
 
 nav a:hover {
