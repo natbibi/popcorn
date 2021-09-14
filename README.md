@@ -66,6 +66,7 @@ It should load on: http://localhost:3000/
 13. Add Search page which sorts data from [themoviedb](https://www.themoviedb.org/) by Most Popular, Best Rated and Highest Grossing
 14. WIP: Mock data for trending hashtags 
 15. WIP: Create MyList Page - users can add shows to a watchlist 
+16. Refactor code to create smoother loading experience 
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
