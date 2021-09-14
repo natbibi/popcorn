@@ -1,14 +1,14 @@
-# Hackathon: Popcorn
+# 🥇 Hackathon: Popcorn 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d8953fe7-7172-4be3-9b53-57c6b6b52bab/deploy-status)](https://app.netlify.com/sites/nat-popcorn/deploys)
 ⚖️ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter). Check out my [blog post](https://natalie.hashnode.dev/popcorn)!
+This project is created for the [Auth0 x Hashnode Hackathon](https://townhall.hashnode.com/auth0-hackathon?source=newsletter) and is one of the [top winning projects](https://townhall.hashnode.com/auth0-hashnode-hackathon-winners). Check out my [blog post](https://natalie.hashnode.dev/popcorn)! 
 
 ![Popcorn](https://user-images.githubusercontent.com/58271566/131402677-e9831d88-dc8d-460c-b0e7-3b6cef473cf1.gif)
 
 ## Description 
-Popcorn is a social media app for movies and tv shows using the MERNG Stack - MongoDb, Express.js, React.js, Node.js, GraphQL. Users can create posts and have discussions related to tv series and movies, see list of top trending hashtags, search for something to watch and add to your list.
+Popcorn is a social media app for movies and tv shows using the MERNG stack - MongoDb, Express.js, React.js, Node.js, GraphQL. Users can create posts and have discussions related to tv series and movies, see list of top trending hashtags, search for something to watch, and add to a watchlist.
 
 # Installation and Usage
 Clone or download this repo.    
