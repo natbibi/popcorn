@@ -6,7 +6,9 @@ body {
 div.spinner {
     display: grid;
     place-items: center;
-    height: 90vh;
+    height: 80vh;
+    position: sticky;
+    top: 0;
 }
 
 .router-link-exact-active {
@@ -23,16 +25,15 @@ div.spinner {
 .main-layout {
     display: grid;
     justify-content: center;
-    margin: 1em;
     display: flex;
+    margin-top: 1rem;
     flex-direction: row;
     grid-template-rows: auto auto 1fr auto auto;
     width: 100%;
-    gap: 5px;
+    /* gap: 5px; */
 }
 
 .sidebar-container {
-    /* border: solid 1px red; */
     min-width: 250px;
 }
 
@@ -99,4 +100,13 @@ a {
 
 a:hover {
     color: #FFFFFF;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .feed-container, .search-container, .mylist-container {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
 }
