@@ -64,11 +64,12 @@ module.exports = {
             throw new Error(err);
         }
     },
-    async likePost(_, { postId }) {
+    async likePost(_, { userId, postId }) {
+        const user = await User.findById(userId)
         const post = await Post.findById(postId)
 
         if (post) {
-            const username = post.username
+            const username = user.username
             if (post.likes.find((like) => like.username === username)) {
                 console.log('olaaa')
                 post.likes = post.likes.filter((like) => like.username !== username);
