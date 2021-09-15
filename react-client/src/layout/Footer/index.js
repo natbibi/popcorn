@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-    <footer className="ui inverted vertical footer segment" style={{ position: "fixed", width: "100%", bottom: "0", textAlign: "center" }}>
+    <footer className="ui inverted vertical footer segment" style={{ position: "fixed", width: "100%", bottom: "0", left: "0", textAlign: "center" }}>
         <div className="logo"/>
         <p>
             Made with ✨ by{" "}
