@@ -30,6 +30,7 @@ const SinglePost = (props) => {
             setComment("")
         },
         variables: {
+            userId: mongoId,
             postId,
             body: comment
         }
@@ -121,8 +122,8 @@ const SinglePost = (props) => {
 }
 
 const ADD_COMMENT_MUTATION = gql`
-    mutation($postId: String!, $body: String!) {
-        createComment(postId: $postId, body: $body) {
+    mutation($userId: ID!, $postId: String!, $body: String!) {
+        createComment(userId: $userId, postId: $postId, body: $body) {
             id 
             comments {
                 id body createdAt username
