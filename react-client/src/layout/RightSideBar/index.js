@@ -6,8 +6,10 @@ import { TrendingList } from "../../components";
 const RightSideBar = () => {
     const [trendingData, setTrendingData] = useState();
     const [error, setError] = useState();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         async function fetchTrending() {
             try {
                 const token = process.env.REACT_APP_TOKEN;
@@ -22,24 +24,27 @@ const RightSideBar = () => {
                     throw new Error(data.err)
                 }
                 setTrendingData(data.results)
+                setLoading(false);
             } catch {
                 console.warn("There's an error!!! Cannot fetch data!")
                 setError('Oops, please try again!')
+                setLoading(false);
             }
         } fetchTrending();
     }, []);
 
     return (
-        <>
+        <> {loading ? <p>Loading...</p> :
             <aside className="sidebar-container right">
                 <h3 style={{ paddingLeft: "3rem" }}>Trending Today </h3>
-                <ol>
+                <ol style={{ color: 'black' }}>
                     {trendingData && trendingData.slice(0, 10).map((r) => (
                         <li><TrendingList key={r.id} list={r} /></li>
                     ))}
                 </ol>
                 {error && <div id="error">{error}</div>}
             </aside>
+        }
         </>
     );
 };
