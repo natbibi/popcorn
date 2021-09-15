@@ -71,15 +71,12 @@ module.exports = {
         if (post) {
             const username = user.username
             if (post.likes.find((like) => like.username === username)) {
-                console.log('olaaa')
                 post.likes = post.likes.filter((like) => like.username !== username);
-                console.log('hi')
             } else {
                 post.likes.push({
                     username,
                     createdAt: new Date().toISOString()
                 })
-                console.log('bye')
             }
             await post.save();
             return post;
