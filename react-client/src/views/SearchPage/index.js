@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Dropdown } from 'semantic-ui-react';
-import axios from 'axios';
 
-import { DropdownResultsList } from "../../components";
+import { DropdownResultsList, Loading } from "../../components";
+import { useApiRequest } from '../../requests'
 
 const SearchPage = () => {
     const [inputData, setInputData] = useState("popularity.desc");
-    const [error, setError] = useState();
-    const [searchResults, setSearchResults] = useState([]);
-   
-    const onChange = (e, {value}) => {
+
+    const { data, loading, error } = useApiRequest(
+        `https://api.themoviedb.org/3/discover/movie?&language=en-US&sort_by=${inputData}&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+    );
+
+    const onChange = (e, { value }) => {
         setInputData(value);
     };
 
@@ -31,58 +33,27 @@ const SearchPage = () => {
         },
     ]
 
-
-    useEffect(() => {
-        async function fetchPopular() {
-            try {
-                const token = process.env.REACT_APP_TOKEN;
-                const options = {
-                    headers: {
-                        "Authorization": `Bearer ${token}`,
-                        "Content-Type": `application/json;charset=utf-8`
-                    }
-                };
-                const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?&language=en-US&sort_by=${inputData}&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`, options)
-                if (data.err) {
-                    throw new Error(data.err)
-                }
-                console.log(data.results)
-                setSearchResults(data.results)
-            } catch {
-                console.warn("There's an error!!! Cannot fetch data!")
-                setError('Oops, please try again!')
-            }
-        } fetchPopular();
-    }, [inputData]);
-
-
     return (
         <>
-            <main className="search-container">
-                {/* <Search
-                    name="input"
-                    onSearchChange={onSearchChange}
-                    onSubmit={onSubmit}
-                    value={inputData.input} 
-                />  */}
+            {loading ? <Loading /> :
+                <main className="search-container">
+                    <Dropdown
+                        name="input"
+                        placeholder='Select View'
+                        fluid
+                        selection
+                        options={options}
+                        onChange={onChange}
+                    />
+                    <section className="popular-container">
+                        {data && data.slice(0, 20).map((r) => (
+                            <DropdownResultsList key={r.id} list={r} />
+                        ))}
 
-                <Dropdown
-                    name="input"
-                    placeholder='Select View'
-                    fluid
-                    selection
-                    options={options}
-                    onChange={onChange}
-                />
-
-                <section className="popular-container">
-                    {searchResults && searchResults.slice(0, 20).map((r) => (
-                        <DropdownResultsList key={r.id} list={r} />
-                    ))}
-
-                    {error && <div id="error">{error}</div>}
-                </section>
-            </main>
+                        {error && <div id="error">{error}</div>}
+                    </section>
+                </main>
+            }
         </>
     );
 }
