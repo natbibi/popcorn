@@ -43,6 +43,7 @@ img.trending-poster {
 
 .feed-container, .single-post-container, .search-container, .mylist-container {
     max-width: 600px;
+    width: 600px;
     flex-grow: 1;
     margin-bottom: 5rem;
 }
