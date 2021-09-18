@@ -41,6 +41,10 @@ img.trending-poster {
     width: 145px;
 }
 
+img.search-poster:hover {
+    transform: scale(1.02);
+}
+
 .feed-container, .single-post-container, .search-container, .mylist-container {
     max-width: 600px;
     width: 600px;

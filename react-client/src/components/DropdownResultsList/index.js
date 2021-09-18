@@ -7,7 +7,7 @@ const DropdownResultsList = ({ list }) => {
     return (
         <>
             <div className="popular-list">
-                <img src={path} alt={list.original_title} />
+                <img className="search-poster" src={path} alt={list.original_title} />
             </div>
         </>
     );
