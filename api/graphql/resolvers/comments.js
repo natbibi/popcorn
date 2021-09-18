@@ -1,10 +1,11 @@
 const { UserInputError } = require('apollo-server')
 
 const Post = require('../../models/Post');
+const User = require('../../models/User');
 
 module.exports = {
     Mutation: {
-        createComment: async (_, { postId, body },) => {
+        createComment: async (_, { userId, postId, body },) => {
             if (body.trim() === '') {
                 throw new UserInputError('Empty Comment', {
                     errors: {
@@ -13,10 +14,11 @@ module.exports = {
                 })
             }
             const post = await Post.findById(postId);
+            const user = await User.findById(userId);
             if (post) {
                 post.comments.unshift({
                     body,
-                    username: post.username,
+                    username: user.username,
                     createdAt: new Date().toISOString()
                 })
                 await post.save();

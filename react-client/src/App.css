@@ -6,7 +6,9 @@ body {
 div.spinner {
     display: grid;
     place-items: center;
-    height: 90vh;
+    height: 80vh;
+    position: sticky;
+    top: 0;
 }
 
 .router-link-exact-active {
@@ -23,16 +25,15 @@ div.spinner {
 .main-layout {
     display: grid;
     justify-content: center;
-    margin: 1em;
     display: flex;
+    margin-top: 1rem;
     flex-direction: row;
     grid-template-rows: auto auto 1fr auto auto;
     width: 100%;
-    gap: 5px;
+    /* gap: 5px; */
 }
 
 .sidebar-container {
-    /* border: solid 1px red; */
     min-width: 250px;
 }
 
@@ -40,8 +41,13 @@ img.trending-poster {
     width: 145px;
 }
 
+img.search-poster:hover {
+    transform: scale(1.02);
+}
+
 .feed-container, .single-post-container, .search-container, .mylist-container {
     max-width: 600px;
+    width: 600px;
     flex-grow: 1;
     margin-bottom: 5rem;
 }
@@ -51,6 +57,9 @@ main.profile-container {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
+}
+
+.left-wrapper {
     position: sticky;
     top: 1rem;
 }
@@ -85,6 +94,7 @@ div.content {
     margin-top: 7rem;
     text-align: center;
 }
+
 nav a {
     color: #a4a5a5;
 }
@@ -99,4 +109,12 @@ a {
 
 a:hover {
     color: #FFFFFF;
+}
+
+@media only screen and (max-width: 800px) {
+    .feed-container, .search-container, .mylist-container {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
 }
