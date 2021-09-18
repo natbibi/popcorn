@@ -7,7 +7,7 @@ import { useApiRequest } from '../../requests'
 const SearchPage = () => {
     const [inputData, setInputData] = useState("popularity.desc");
 
-    const { data, loading, error } = useApiRequest(
+    const { data, error } = useApiRequest(
         `https://api.themoviedb.org/3/discover/movie?&language=en-US&sort_by=${inputData}&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
     );
 
@@ -35,7 +35,6 @@ const SearchPage = () => {
 
     return (
         <>
-            {loading ? <Loading /> :
                 <main className="search-container">
                     <Dropdown
                         name="input"
@@ -53,7 +52,6 @@ const SearchPage = () => {
                         {error && <div id="error">{error}</div>}
                     </section>
                 </main>
-            }
         </>
     );
 }
