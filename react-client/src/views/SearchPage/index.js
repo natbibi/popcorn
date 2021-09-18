@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from 'semantic-ui-react';
 
-import { DropdownResultsList, Loading } from "../../components";
+import { DropdownResultsList } from "../../components";
 import { useApiRequest } from '../../requests'
 
 const SearchPage = () => {
