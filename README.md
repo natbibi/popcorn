@@ -47,6 +47,7 @@ It should load on: http://localhost:3000/
 6. Connect front end to back end and connect mongoDB database to AuthO 
 7. Set up layout and add CRUD functionality 
 8. Deploy backend on to Heroku!
+9. Work on responsive design and fix bugs 
 
 ## Changelog
 
@@ -67,6 +68,7 @@ It should load on: http://localhost:3000/
 14. WIP: Mock data for trending hashtags 
 15. WIP: Create MyList Page - users can add shows to a watchlist 
 16. Refactor code to create smoother loading experience 
+17. Remove mock data for TrendingHashtags and use [themoviedb](https://www.themoviedb.org) data  
 
 ### api
 1. Set up apollo-server w/ express.js and config for graphQL 
@@ -91,8 +93,9 @@ It should load on: http://localhost:3000/
 - [x] Netlify build failing if eslint errors found - Solved: add environment variables CI=False
 - [x] Links which open to another page in app doesn't open from top of new page - Solved: [Scroll Restoration](https://reactrouter.com/web/guides/scroll-restoration) 
 - [x] .env variable not read in api - Solved: install dotenv dependency
-- [ ] posting comment on a post will return comment by OP's instead of current user 
-- [ ] likeButton ternary not functioning properly (if liking other user's posts, button doesn't change color)
+- [x] posting comment on a post will return comment by OP's instead of current user - Solved: use logged in userId instead of user on postId
+- [x] likeButton ternary not functioning properly (if liking other user's posts, button doesn't change color) - Solved: use logged in userId instead of user on postId
+- [ ] Check if actual bug -> on like, it sets state of setLiked to false
  
 # Wins & Challenges
 
